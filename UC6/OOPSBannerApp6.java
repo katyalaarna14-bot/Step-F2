@@ -1,5 +1,6 @@
 public class OOPSBannerApp6 {
 
+
     public static String[] getOPattern() {
         return new String[] {
             "  *****  ",

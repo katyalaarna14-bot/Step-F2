@@ -11,7 +11,7 @@ public class OOPSBannerApp7 {
             case 'O', 'o' -> characterPatternMap.pattern = getOPattern();
             case 'P' -> characterPatternMap.pattern = getPPattern();
             case 'S' -> characterPatternMap.pattern = getSPattern();
-            default -> characterPatternMap.pattern = getEmptyPattern();
+            default -> characterPatternMap.pattern = null; 
         }
 
         return characterPatternMap;
@@ -53,18 +53,6 @@ public class OOPSBannerApp7 {
         };
     }
 
-    private static String[] getEmptyPattern() {
-        return new String[]{
-                "          ",
-                "          ",
-                "          ",
-                "          ",
-                "          ",
-                "          ",
-                "          "
-        };
-    }
-
     public static void main(String[] args) {
 
         char[] chars = {'O', 'O', 'P', 'S'};
@@ -75,10 +63,13 @@ public class OOPSBannerApp7 {
         }
 
         for (char c : chars) {
-            String[] pattern = getCharacterPatternMap(c).pattern;
+
+            CharacterPatternMap map = getCharacterPatternMap(c);
+
+            if (map.pattern == null) continue;   
 
             for (int i = 0; i < lines.length; i++) {
-                lines[i] += pattern[i] + "  ";
+                lines[i] += map.pattern[i] + "  ";
             }
         }
 
@@ -86,5 +77,4 @@ public class OOPSBannerApp7 {
             System.out.println(line);
         }
     }
-} 
-
+}
