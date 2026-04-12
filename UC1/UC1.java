@@ -1,4 +1,4 @@
-package Hello_App;
+package UC1;
 
 public class UC1 {
     public static void main(String[] args) {
